@@ -10,6 +10,7 @@ import { initApp } from './src/initApp.js';
 import { dbConnection } from './DataBase/dbConnection.js';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import { createOnlineOrder } from './src/modules/order/order.controller.js';
 
 
 const app = express()
@@ -21,6 +22,35 @@ app.use(cors()) ;
 
 // mongoose.set("debug" , true) ;
 // mongoose.set("strictQuery" , true) ;
+
+
+
+
+
+app.post('/webhook', express.raw({type: 'application/json'}), createOnlineOrder);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
